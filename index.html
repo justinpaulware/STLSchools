@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Planning Map</title>
+
+  <!-- MapLibre GL JS -->
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <h1 id="map-title">Urban Planning Map</h1>
+      <p id="map-subtitle">Layer explorer</p>
+    </div>
+
+    <div id="layer-list">
+      <!-- Layers rendered here by JS -->
+    </div>
+
+    <div id="sidebar-footer">
+      <button id="btn-fit-bounds" title="Zoom to all data">&#9654; Fit all layers</button>
+    </div>
+  </aside>
+
+  <!-- Popup -->
+  <div id="custom-popup" class="hidden">
+    <button id="popup-close" aria-label="Close">&times;</button>
+    <div id="popup-content"></div>
+  </div>
+
+  <!-- Style panel toggle -->
+  <button id="btn-style-panel" title="Map style">&#9670; Style</button>
+
+  <!-- Style panel -->
+  <div id="style-panel" class="hidden">
+    <h3>Base map</h3>
+    <div id="basemap-options">
+      <button class="basemap-btn active" data-style="https://tiles.openfreemap.org/styles/liberty">Liberty</button>
+      <button class="basemap-btn" data-style="https://tiles.openfreemap.org/styles/bright">Bright</button>
+      <button class="basemap-btn" data-style="https://tiles.openfreemap.org/styles/positron">Positron</button>
+      <button class="basemap-btn" data-style="https://tiles.openfreemap.org/styles/dark-matter">Dark</button>
+    </div>
+
+    <h3>Layer opacity</h3>
+    <div id="opacity-controls">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/config.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
